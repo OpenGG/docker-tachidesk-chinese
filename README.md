@@ -5,19 +5,18 @@ Dockerized TachiDesk environment with chinese-utils support for running the Copy
 ## Usage
 
 ```bash
-# download
-curl -O -L https://github.com/OpenGG/docker-tachidesk-chinese/archive/refs/heads/main.zip
+# Download
+curl -O -L https://github.com/OpenGG/docker-tachidesk-chinese/archive/refs/heads/main.zip && \
+  unzip main.zip && \
+  rm main.zip
 
-# unzip
-unzip main.zip
-
-# startup
+# Get into main dir
 cd docker-tachidesk-chinese-main
 
-# fix permissions
+# Fix permissions
 chown -R 1000:1000 data
 
-# start with docker-compose
+# Start with docker-compose
 docker-compose up -d
 
 ```
