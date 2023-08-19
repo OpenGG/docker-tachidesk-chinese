@@ -1,0 +1,27 @@
+version: '3.7'
+services:
+  tachidesk:
+    user: 1000:1000
+    # image: ghcr.dockerproxy.com/suwayomi/tachidesk:latest
+    image: ghcr.io/suwayomi/tachidesk:latest
+    environment:
+      - TZ=Asia/Shanghai # Use TZ database name from https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+      - DEBUG=true
+      - BIND_IP=0.0.0.0
+      - BIND_PORT=4567
+      - SOCKS_PROXY_ENABLED=false
+      - SOCKS_PROXY_HOST=
+      - SOCKS_PROXY_PORT=
+      - DOWNLOAD_AS_CBZ=false
+      - MAX_PARALLEL_UPDATE=3
+      - BASIC_AUTH_ENABLED=true
+      - BASIC_AUTH_USERNAME=admin
+      - BASIC_AUTH_PASSWORD=admin
+    volumes:
+      - ./data:/home/suwayomi/.local/share/Tachidesk
+      - ./startup/chinese-utils-1.0.jar:/home/suwayomi/startup/chinese-utils-1.0.jar:ro
+      - ./startup/startup_script_chinese.sh:/home/suwayomi/startup/startup_script_chinese.sh:ro
+    command: ['/bin/sh', '/home/suwayomi/startup/startup_script_chinese.sh']
+    ports:
+      - "4567:4567"
+    restart: on-failure:3
