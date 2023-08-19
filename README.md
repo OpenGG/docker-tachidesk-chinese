@@ -24,7 +24,7 @@ docker-compose up -d
 
 ### Installing the CopyManga Plugin
 
-1. Download the [latest CopyManga plugin](https://github.com/stevenyomi/copymanga/releases/latest) (choose the original version, not the "Tachidesk compatible" one).
+1. Download the [latest CopyManga plugin](https://github.com/stevenyomi/copymanga/releases/latest) (choose the normal version, not the "Tachidesk compatible" one).
 2. Install the plugin within Tachidesk.
 
 Notes:
