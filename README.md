@@ -16,7 +16,7 @@ curl -O -L https://github.com/OpenGG/docker-tachidesk-chinese/archive/refs/heads
 cd docker-tachidesk-chinese-main
 
 # Step 3: Adjust permissions
-chown -R 1000:1000 data
+sudo chown -R 1000:1000 data
 
 # Step 4: Start using docker-compose
 docker-compose up -d
