@@ -17,6 +17,7 @@ cd docker-tachidesk-chinese-main
 
 # Step 3: Adjust permissions
 sudo chown -R 1000:1000 data
+chmod +x ./startup/startup_script_chinese.sh
 
 # Step 4: Start using docker-compose
 docker-compose up -d
